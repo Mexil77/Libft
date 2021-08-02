@@ -1,5 +1,17 @@
 #include "libft.h"
 
+char	ft_sumachar(unsigned int i, char c)
+{
+	printf("indice: %d\n", i);
+	return (c + 1);
+}
+
+void	ft_sumachar2(unsigned int i, char *c)
+{
+	printf("indice: %d\n", i);
+	*c += 1;
+}
+
 int	main(void)
 {
 	char	**split;
@@ -7,27 +19,11 @@ int	main(void)
 	char	str2[] = "copi";
 	char	str3[50];
 	char	str4[] = "copil";
-	int	i = -1;
-	
-	printf("ft_strjoin ORI : *%s*\n", str1);
-	printf("ft_strjoin ORI : *%s*\n", str2);
-	printf("ft_strjoin JOY : *%s*\n", ft_strjoin(str1, str2));
-	
-	printf("\n");
-
-	printf("ft_strnstr ONE : *%s*\n", str1);
-	printf("ft_strnstr TWO : *%s*\n", str2);
-	printf("ft_strnstr FID : *%s*\n", ft_strnstr(str1, str2, 2));
-
-	printf("\n");
-
-	split = ft_split(str1, 'a');
-	printf("ft_split STR_OR : *%s*\n", str1);
-	while (split[++i] != NULL)
-		printf("Palabra NO. %d : *%s*\n", i, split[i]);
-	i = -1;
-	
-	printf("\n");
+	char	str5[] = "hola como estas?";
+	char	str6[] = "como";
+	int		num1 = -1;
+	int		i = -1;
+	int		fd;
 
 	printf("ft_isalpha : *%d*\n", ft_isalpha('A'));
 	
@@ -98,7 +94,7 @@ int	main(void)
 	printf("\n");
 
 	printf("ft_strchr ORI : *%s*\n", str3);
-	printf("ft_strchr FID : *%s*\n", ft_strchr(str3, 'i'));
+	printf("ft_strchr FID : *%s*\n", ft_strchr(str3, 'z'));
 
 	printf("\n");
 
@@ -120,15 +116,93 @@ int	main(void)
 
 	printf("ft_memcmp OR1 : *%s*\n", str2);
 	printf("ft_memcmp OR2 : *%s*\n", str4);
-	printf("ft_memcmp FID : *%d*\n", ft_memcmp(str2, str4, 5));
+	printf("ft_memcmp FID : *%d*\n", ft_memcmp(str2, str4, 4));
 
 	printf("\n");
 
-	printf("ft_substr ORI : *%s*\n", str1);
-	printf("ft_substr CPY : *%s*\n", ft_substr(str1, 0, 5));
+	printf("ft_strnstr ONE : *%s*\n", str5);
+	printf("ft_strnstr TWO : *%s*\n", str6);
+	printf("ft_strnstr FID : *%s*\n", ft_strnstr(str5, str6, 5));
 
 	printf("\n");
 
 	printf("ft_atoi : *%d*\n", ft_atoi(" 	-3568ds218"));
+	
+	printf("\n");
+
+	printf("ft_substr ORI : *%s*\n", str5);
+	printf("ft_substr CPY : *%s*\n", ft_substr(str5, 2, 5));
+
+	printf("\n");
+
+	printf("ft_strjoin ORI : *%s*\n", str5);
+	printf("ft_strjoin ORI : *%s*\n", str2);
+	printf("ft_strjoin JOY : *%s*\n", ft_strjoin(str5, str2));
+
+	printf("\n");
+
+	split = ft_split(str5, ' ');
+	printf("ft_split STR_OR : *%s*\n", str5);
+	while (split[++i] != NULL)
+		printf("Palabra NO. %d : *%s*\n", i + 1, split[i]);
+	i = -1;
+	
+	printf("\n");
+
+	printf("ft_itoa NUM : *%d*\n", num1);
+	printf("ft_itoa STR : *%s*\n", ft_itoa(num1));
+
+	printf("\n");
+
+	printf("ft_strmapi ORG : *%s*\n", str3);
+	printf("ft_strmapi MAP : *%s*\n", ft_strmapi(str3, &ft_sumachar));
+	
+	printf("\n");
+
+	printf("ft_striteri ORG : *%s*\n", str3);
+	ft_striteri(str3, &ft_sumachar2);
+	printf("ft_striteri CHG : *%s*\n", str3);
+	
+	printf("\n");
+
+	fd = open("/Users/emgarcia/Documents/Libft/fichero1", O_RDWR);
+	if (fd == -1)
+		printf("ft_putchar_fd : ERROR al abrir\n");
+	else
+		ft_putchar_fd('A', fd);
+	
+	printf("\n");
+
+	fd = open("/Users/emgarcia/Documents/Libft/fichero2", O_RDWR);
+	if (fd == -1)
+		printf("ft_putstr_fd : ERROR al abrir\n");
+	else
+		ft_putstr_fd("Hola", fd);
+
+	printf("\n");
+
+	fd = open("/Users/emgarcia/Documents/Libft/fichero3", O_RDWR);
+	if (fd == -1)
+		printf("ft_putendl_fd : ERROR al abrir\n");
+	else
+		ft_putendl_fd("Hola", fd);
+
+	printf("\n");
+
+	fd = open("/Users/emgarcia/Documents/Libft/fichero4", O_RDWR);
+	if (fd == -1)
+		printf("ft_putnbr_fd : ERROR al abrir\n");
+	else
+		ft_putnbr_fd(150, fd);
+
+	printf("\n");
+
+	printf("str1 : *%s*\n", str1);
+	printf("str2 : *%s*\n", str2);
+	printf("str3 : *%s*\n", str3);
+	printf("str4 : *%s*\n", str4);
+	printf("str5 : *%s*\n", str5);
+	
+	printf("\n");
 	return (0);
 }

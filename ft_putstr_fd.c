@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 14:55:53 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/02 12:55:54 by emgarcia         ###   ########.fr       */
+/*   Created: 2021/08/02 19:20:21 by emgarcia          #+#    #+#             */
+/*   Updated: 2021/08/02 20:20:29 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char	*big, const char *needle, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
-	size_t	j;
-	char	*loc;
 
-	i = 0;
-	j = 0;
-	loc = (char *)big;
-	while (big[i] != '\0')
-	{
-		while ((j < len) && (needle[j] == big[i + j]) && (big[i + j] != '\0'))
-			j++;
-		if (j == len)
-			return (loc += i);
-		j = 0;
-		i++;
-	}
-	return (NULL);
+	i = -1;
+	while (s[++i] != '\0')
+		write(fd, &s[i], 1);
 }
