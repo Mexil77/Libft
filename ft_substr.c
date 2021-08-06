@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:56:18 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 14:56:20 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/06 17:57:58 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	i = -1;
-	if ((start > s_len - 1) || (start + len - 1 > s_len))
+	if ((start > s_len - 1) || (start + len > s_len + 1))
 		return (NULL);
 	aux = (char *)malloc(sizeof(char) * (len + 1));
 	if (aux == NULL)
