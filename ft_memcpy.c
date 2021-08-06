@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 12:35:50 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/03 16:37:00 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/04 14:16:23 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = -1;
 	while (++i < n)
 		dest[i] = sourc[i];
-	dest[i] = '\0';
 	return (dst);
 }

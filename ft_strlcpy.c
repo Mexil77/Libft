@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:14:34 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 18:46:54 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/04 17:57:04 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
-	i = -1;
-	while (++i < dstsize && src[i] != '\0')
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-	((unsigned char *)dst)[i] = '\0';
+	i = 0;
+	while (dstsize > 0 && i < dstsize - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (dstsize > 0)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
 	return (i);
 }

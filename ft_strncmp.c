@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:49:08 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 19:35:27 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:01:08 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (++i < n)
 	{
 		if (s1[i] > s2[i])
+			return (1);
+		if (s1[i] == '\200' && s2[i] == '\0')
 			return (1);
 		if (s1[i] < s2[i])
 			return (-1);
