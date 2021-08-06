@@ -6,13 +6,13 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 13:09:33 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/02 15:51:04 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:24:28 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intlen(int n)
+static size_t	ft_intlen(int n)
 {
 	size_t	len;
 
@@ -25,7 +25,7 @@ size_t	ft_intlen(int n)
 	return (len);
 }
 
-int	ft_cpy_len(int n_cpy, size_t *len, int n)
+static int	ft_cpy_len(int n_cpy, size_t *len, int n)
 {
 	if (n <= 0)
 	{
@@ -52,6 +52,8 @@ char	*ft_itoa(int n)
 	n_cpy = ft_cpy_len(n_cpy, &len, n);
 	len += ft_intlen(n_cpy);
 	str_num = (char *)malloc(sizeof(char) * len);
+	if (str_num == NULL)
+		return (NULL);
 	str_num[--len] = '\0';
 	if (n == -2147483648)
 		str_num[--len] = '8';

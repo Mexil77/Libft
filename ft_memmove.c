@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 13:07:53 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 17:48:49 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:25:55 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		s_dst = s_dst + len - 1;
 		s_src = s_src + len - 1;
 		while (len--)
-		{
 			*s_dst-- = *s_src--;
-		}
 	}
 	else
-	{
 		while (len--)
-		{
 			*s_dst++ = *s_src++;
-		}
-	}
 	return (dst);
 }

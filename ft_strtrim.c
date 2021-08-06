@@ -6,13 +6,13 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:30:54 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/06 17:44:18 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:36:13 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_findchr(const char *str, char	c)
+static size_t	ft_findchr(const char *str, char	c)
 {
 	size_t	i;
 
@@ -23,7 +23,7 @@ size_t	ft_findchr(const char *str, char	c)
 	return (0);
 }
 
-size_t	ft_contrem(char const *s1, char const *set)
+static size_t	ft_contrem(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	rem;

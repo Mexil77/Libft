@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t	ft_count_words(char const *s, size_t *i, char c)
+static size_t	ft_count_words(char const *s, size_t *i, char c)
 {
 	size_t	cont_str;
 	size_t	find_let;
@@ -22,7 +22,7 @@ size_t	ft_count_words(char const *s, size_t *i, char c)
 	return (cont_str);
 }
 
-char	**ft_fill_split(char **split, char const *s, char c)
+static char	**ft_fill_split(char **split, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -50,7 +50,7 @@ char	**ft_fill_split(char **split, char const *s, char c)
 	return (split);
 }
 
-void	ft_asign(size_t *i, size_t *j, size_t a, size_t b)
+static void	ft_asign(size_t *i, size_t *j, size_t a, size_t b)
 {
 	*i = a;
 	*j = b;

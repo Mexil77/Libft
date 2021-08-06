@@ -6,18 +6,20 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 13:29:50 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/03 18:24:45 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:20:44 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
 # include <unistd.h>
-# include <ctype.h>
-# include <string.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /*here list all used functions*/
 int		ft_isalpha(int c);
