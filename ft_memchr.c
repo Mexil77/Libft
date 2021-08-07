@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 12:20:47 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/04 14:10:34 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/07 22:16:39 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (++i < n && ((char *)s)[i] != '\0')
 		if (((char *)s)[i] == c)
 			return (find += i);
+	if (((char *)s)[i] == c)
+		return (find += i);
 	return (NULL);
 }

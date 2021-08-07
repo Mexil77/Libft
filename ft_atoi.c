@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 17:05:23 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 20:25:33 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:30:36 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	number;
-	int	signo;
+	int		i;
+	long	number;
+	int		signo;
 
 	i = 0;
 	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
@@ -29,11 +29,9 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	number = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
+	i--;
+	while (str[++i] >= '0' && str[i] <= '9')
 		number = 10 * number + str[i] - '0';
-		i++;
-	}
-	number *= signo;
+	number *= (long)signo;
 	return (number);
 }

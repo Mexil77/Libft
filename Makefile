@@ -6,7 +6,7 @@
 #    By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/01 13:26:03 by emgarcia          #+#    #+#              #
-#    Updated: 2021/08/07 19:38:57 by emgarcia         ###   ########.fr        #
+#    Updated: 2021/08/07 20:57:06 by emgarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,5 +37,8 @@ clean:
 
 fclean: clean
 	${RM} ${NAME}
+
+bclean:
+	${RM} ${OBJS_B}
 
 re: fclean all

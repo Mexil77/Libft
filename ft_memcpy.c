@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 12:35:50 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/04 14:16:23 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/07 22:11:28 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*dest;
 	const char	*sourc;
 
-	if (src == NULL || dst == NULL)
+	if (src == NULL && dst == NULL)
 		return (NULL);
 	dest = dst;
 	sourc = src;
