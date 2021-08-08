@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 18:15:52 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/07 19:40:53 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:13:15 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*aux;
 	t_list	*nuevo;
 
+	if (!lst)
+		return (NULL);
 	aux = lst;
 	primero = ft_lstnew(f (aux->content));
 	aux = aux->next;

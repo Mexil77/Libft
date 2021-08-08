@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:52:40 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/06 18:34:51 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:35:43 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = -1;
 	len = ft_strlen(s);
-	res = malloc(sizeof(char) * len);
+	res = malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
 	while (++i < len)

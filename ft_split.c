@@ -64,10 +64,12 @@ char	**ft_split(char const *s, char c)
 	size_t	cont_str;
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	ft_asign(&i, &j, -1, 0);
 	cont_str = ft_count_words(s, &i, c);
 	ft_asign(&k, &i, i + 1, -1);
-	split = (char **)malloc(sizeof(char *) * (cont_str + 1));
+	split = (char **) ft_calloc((cont_str + 1), sizeof(char *));
 	cont_str = 0;
 	while (++i < k)
 	{
@@ -76,10 +78,9 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			if (cont_str > 0)
-				split[j++] = (char *)malloc(sizeof(char) * (cont_str + 1));
+				split[j++] = (char *) ft_calloc((cont_str + 1), sizeof(char));
 			cont_str = 0;
 		}
 	}
-	split[j] = NULL;
 	return (ft_fill_split(split, s, c));
 }

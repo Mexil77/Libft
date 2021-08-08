@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:30:54 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/06 18:36:13 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:32:00 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	char	*final;
 
+	if (!s1 || !set)
+		return (NULL);
 	rem = ft_contrem(s1, set);
 	len = ft_strlen(s1);
 	final = (char *)malloc(sizeof(char) * (len - rem + 1));

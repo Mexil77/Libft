@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 14:54:34 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/01 14:55:26 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:30:49 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*final;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = -1;
 	j = -1;
 	s1_len = ft_strlen(s1);

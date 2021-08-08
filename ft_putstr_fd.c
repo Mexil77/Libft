@@ -6,7 +6,7 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 19:20:21 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/02 20:20:29 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/08/08 16:37:03 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	i = -1;
-	while (s[++i] != '\0')
-		write(fd, &s[i], 1);
+	if (s)
+	{
+		i = -1;
+		while (s[++i] != '\0')
+			write(fd, &s[i], 1);
+	}
 }
