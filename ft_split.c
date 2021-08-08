@@ -58,27 +58,26 @@ static void	ft_asign(size_t *i, size_t *j, size_t a, size_t b)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	index[3];
 	size_t	cont_str;
 	char	**split;
 
 	if (!s)
 		return (NULL);
-	ft_asign(&i, &j, -1, 0);
-	cont_str = ft_count_words(s, &i, c);
-	ft_asign(&k, &i, i + 1, -1);
-	split = (char **) ft_calloc((cont_str + 1), sizeof(char *));
+	ft_asign(&index[0], &index[1], -1, 0);
+	split = ft_calloc((ft_count_words(s, &index[0], c) + 1), sizeof(char *));
+	ft_asign(&index[2], &index[0], index[0] + 1, -1);
+	if (!split)
+		return (NULL);
 	cont_str = 0;
-	while (++i < k)
+	while (++index[0] < index[2])
 	{
-		if (s[i] != c && s[i] != '\0')
+		if (s[index[0]] != c && s[index[0]] != '\0')
 			cont_str++;
 		else
 		{
 			if (cont_str > 0)
-				split[j++] = (char *) ft_calloc((cont_str + 1), sizeof(char));
+				split[index[1]++] = ft_calloc((cont_str + 1), sizeof(char));
 			cont_str = 0;
 		}
 	}
