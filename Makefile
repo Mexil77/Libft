@@ -6,7 +6,7 @@
 #    By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/01 13:26:03 by emgarcia          #+#    #+#              #
-#    Updated: 2021/08/07 20:57:06 by emgarcia         ###   ########.fr        #
+#    Updated: 2021/08/09 18:00:09 by emgarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,16 +29,13 @@ all: ${NAME}
 $(NAME): ${OBJS}
 	ar -crs ${NAME} ${OBJS}
 
-bonus: ${OBJS_B}
-	ar -crs ${NAME} ${OBJS_B} 
+bonus: ${OBJS_B} ${OBJS}
+	ar -crs ${NAME} ${OBJS_B} ${OBJS}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS_B}
 
 fclean: clean
 	${RM} ${NAME}
-
-bclean:
-	${RM} ${OBJS_B}
 
 re: fclean all
