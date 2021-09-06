@@ -6,13 +6,13 @@
 /*   By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:30:54 by emgarcia          #+#    #+#             */
-/*   Updated: 2021/08/08 16:32:00 by emgarcia         ###   ########.fr       */
+/*   Updated: 2021/09/06 13:44:42 by emgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_findchr(const char *str, char	c)
+static size_t	ft_findchr(const char *str, char c)
 {
 	size_t	i;
 
