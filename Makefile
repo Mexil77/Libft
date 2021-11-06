@@ -23,19 +23,22 @@ RM		= rm -rf
 
 all: ${NAME}
 
+%.o: %.c
+	@${CC} ${CFLAGS} -c $< -o $@
+
 $(NAME): ${OBJS}
 	@make -C get_next_line
-	cp ${GNLA} ${NAME}
-	ar -crs ${NAME} ${OBJS}
+	@cp ${GNLA} ${NAME}
+	@ar -crs ${NAME} ${OBJS}
 
 bonus: ${OBJS_B} ${OBJS}
-	ar -crs ${NAME} ${OBJS_B} ${OBJS}
+	@ar -crs ${NAME} ${OBJS_B} ${OBJS}
 
 clean:
-	cd get_next_line ; make fclean
-	${RM} ${OBJS} ${OBJS_B}
+	@cd get_next_line ; make fclean
+	@${RM} ${OBJS} ${OBJS_B}
 
 fclean: clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re: fclean all
