@@ -6,7 +6,7 @@
 #    By: emgarcia <emgarcia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/01 13:26:03 by emgarcia          #+#    #+#              #
-#    Updated: 2021/08/09 18:00:09 by emgarcia         ###   ########.fr        #
+#    Updated: 2021/11/08 17:10:12 by emgarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
-all: ${NAME}
+all: submodule ${NAME}
 
 %.o: %.c
 	@${CC} ${CFLAGS} -c $< -o $@
@@ -30,6 +30,10 @@ $(NAME): ${OBJS}
 	@make -C get_next_line
 	@cp ${GNLA} ${NAME}
 	@ar -crs ${NAME} ${OBJS}
+
+submodule:
+	@git submodule init
+	@git submodule update --remote
 
 bonus: ${OBJS_B} ${OBJS}
 	@ar -crs ${NAME} ${OBJS_B} ${OBJS}
